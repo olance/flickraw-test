@@ -1,0 +1,14 @@
+.red {
+  color: red; }
+
+.green {
+  color: green; }
+
+.clear {
+  clear: both; }
+
+#photos {
+  padding: 20px; }
+  #photos .photo {
+    float: left;
+    margin: 10px; }

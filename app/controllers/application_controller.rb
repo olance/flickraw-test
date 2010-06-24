@@ -13,10 +13,17 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   def index
-    redirect_to auth_url and return if not @user.token
+    redirect_to auth_path and return if not @user.token
     
-    auth = flickr.auth.checkToken
-    flash[:success] = "You are authenticated with Flickr as '#{auth.user.username}'"
+    begin
+      @auth = flickr.auth.checkToken
+      flash[:success] = "You are authenticated with Flickr as '#{@auth.user.username}'"
+    rescue FlickRaw::FailedResponse => e
+      flash[:error] = "You need to authenticate again (#{e.msg})"
+      redirect_to auth_path and return
+    end
+    
+    @photos = flickr.people.getPhotos :user_id => "me", :per_page => 10, :page => params[:page] || 1
   end
   
   def auth

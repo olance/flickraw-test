@@ -4,3 +4,16 @@
 -elsif flash[:error]
   #flash.red
     = flash[:error]
+
+= link_to "Profile page", FlickRaw::URL_PROFILE + @auth.user.nsid
+
+#photos
+  - @photos.each do |photo|
+    .photo
+      = image_tag FlickRaw.url_s(photo)
+  
+  .clear
+  
+  == Page: #{@photos.page} / #{@photos.pages} --
+  == #{link_to("« previous", root_path(:page => @photos.page - 1)) + " - " if @photos.page > 1}
+  = link_to "next »", root_path(:page => @photos.page + 1) if @photos.page < @photos.pages
