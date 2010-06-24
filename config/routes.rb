@@ -35,6 +35,9 @@ ActionController::Routing::Routes.draw do |map|
 
   # See how all your routes lay out with "rake routes"
 
+  map.auth "/auth", :action => :auth, :controller => :application
+  map.complete_auth "/auth/complete", :action => :complete_auth, :controller => :application
+
   map.root :action => :index, :controller => :application
 
   # Install the default routes as the lowest priority.
