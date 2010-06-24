@@ -1,0 +1,8 @@
+= FlickRaw-test
+
+This is just a really basic application that uses FlickRaw to call Flickr API and fetch a user's photos after having authenticated him.
+I pushed this here for an issue I created on FlickRaw...
+
+
+== Requirements
+To get the app working you need one User in your database, so just run rake db:seed or create a User (with nil token attribute) before running the app.
