@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
       flash[:success] = "You are authenticated with Flickr as '#{@auth.user.username}'"
     rescue FlickRaw::FailedResponse => e
       flash[:error] = "You need to authenticate again (#{e.msg})"
+      @user.token = nil
+      @user.save
       redirect_to auth_path and return
     end
     
@@ -55,8 +57,8 @@ class ApplicationController < ActionController::Base
   
 protected
   def setup_flickraw
-    FlickRaw.api_key = "6eb9a6f841c27d55450db8f96a5411ef"
-    FlickRaw.shared_secret = "387d8e8c2d3f27b2"
+    FlickRaw.api_key = "YOUR_KEY"
+    FlickRaw.shared_secret = "YOUR_SECRET"
   end
   
   def get_user
