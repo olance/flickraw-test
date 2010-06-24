@@ -161,3 +161,81 @@ Processing ApplicationController#auth (for 127.0.0.1 at 2010-06-25 00:11:15) [GE
 Rendering template within layouts/application
 Rendering application/auth
 Completed in 472ms (View: 11, DB: 0) | 200 OK [http://localhost/auth]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#auth (for 127.0.0.1 at 2010-06-25 00:17:27) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+Rendering template within layouts/application
+Rendering application/auth
+Completed in 1339ms (View: 48, DB: 1) | 200 OK [http://localhost/auth]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:17:30) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3002/auth
+Completed in 8ms (DB: 2) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#auth (for 127.0.0.1 at 2010-06-25 00:17:30) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+Rendering template within layouts/application
+Rendering application/auth
+Completed in 526ms (View: 1, DB: 0) | 200 OK [http://localhost/auth]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:21:19) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Redirected to http://flickraw-test.heroku.com:3002/auth
+Completed in 8ms (DB: 2) | 302 Found [http://flickraw-test.heroku.com/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#auth (for 127.0.0.1 at 2010-06-25 00:21:19) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+Rendering template within layouts/application
+Rendering application/auth
+Completed in 533ms (View: 1, DB: 0) | 200 OK [http://flickraw-test.heroku.com/auth]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#complete_auth (for 127.0.0.1 at 2010-06-25 00:21:42) [GET]
+  Parameters: {"frob"=>"72157624225800795-95d97c8f61878d44-801763"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Columns (59.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (23.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-06-24 22:21:43', `token` = '72157624350490572-cbb710a1b25e3812' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://flickraw-test.heroku.com:3002/
+Completed in 1181ms (DB: 84) | 302 Found [http://flickraw-test.heroku.com/auth/complete?frob=72157624225800795-95d97c8f61878d44-801763]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:21:43) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering application/index
+Completed in 539ms (View: 6, DB: 2) | 200 OK [http://flickraw-test.heroku.com/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-25 00:21:51) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering application/index
+Completed in 513ms (View: 1, DB: 2) | 200 OK [http://flickraw-test.heroku.com/]
