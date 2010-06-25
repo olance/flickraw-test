@@ -57,8 +57,8 @@ class ApplicationController < ActionController::Base
   
 protected
   def setup_flickraw
-    FlickRaw.api_key = "YOUR_KEY"
-    FlickRaw.shared_secret = "YOUR_SECRET"
+    FlickRaw.api_key = "6eb9a6f841c27d55450db8f96a5411ef"
+    FlickRaw.shared_secret = "387d8e8c2d3f27b2"
   end
   
   def get_user
